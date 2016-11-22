@@ -1,0 +1,50 @@
+*simple-todo.txt*   Manage todo lists. Really simple.
+
+Author:     Lasse S. Haslev | lasse@haslev.no
+License:    MIT
+
+
+                              Reference manual~
+
+==============================================================================
+Add semicolon or comma in en of line/lines                       *simple-todo*
+
+    1. Intro.................................|simple-todo-into|
+    2. Mappings..............................|simple-todo-maps|
+    3. Contributing..........................|simple-todo-contrib|
+
+==============================================================================
+1. Intro                                                    *simple-todo-into*
+
+Add string on end of single or multiple lines. Mostly used to set
+semicolon or commas on end of line.
+
+Supported format of todo list is similar to task lists used in GitHub Flavored
+Markdown. Read GitHub blog article for example:
+
+https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments
+
+
+==============================================================================
+2. Mappings                                                 *simple-todo-maps*
+
+Plugin exposes some <Plug> maps. These maps are available for normal, visual
+and insert modes.
+
+Default key bindings (which is pretty handy) can be completely disabled
+>
+    let g:period_map_keys = 0
+<
+
+Only semicolon is on by default
+map ;; :call PeriodIsA( ';' )<cr><ESC>
+imap ;; <ESC>:call PeriodIsA( ';' )<cr>a
+
+==============================================================================
+4. Contributing                                          *simple-todo-contrib*
+
+Don’t hesitate to create a new GitHub Issue for any bug or suggestion:
+
+https://github.com/LasseHaslev/vim-period/issues
+
+vim:tw=78:et:ft=help:norl:
