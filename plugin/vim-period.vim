@@ -8,9 +8,16 @@ if !exists('g:period_map_keys')
 endif
 " Config }}}
 
+" Functions {{{
+function! PeriodIsA( type ) " {{{
+    let a:executable = ":norm A" . a:type
+    exec a:executable
+endfunction " }}}
+" Functions }}}
+
 " Mappings {{{
 if g:period_map_keys " {{{
-    map ;; :call period#PeriodIsA( ';' )<cr><ESC>
-    imap ;; <ESC>:call period#PeriodIsA( ';' )<cr>a
+    map ;; :call PeriodIsA( ';' )<cr><ESC>
+    imap ;; <ESC>:call PeriodIsA( ';' )<cr>a
 endif " }}}
 " Mappings }}}
